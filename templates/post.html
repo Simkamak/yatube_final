@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Страница добавления комментариев к записи{% endblock %}
+
+{% block content %}
+{% include "includes/user.html" %}
+<div class="container">
+           <h1>Страница комментарие к записи пользователя {{ author.username }}</h1>
+            <!-- Пост -->
+           {% include "includes/post_item.html" with post=post %}
+                <!-- Форма добавления комментария -->
+                    {% include "includes/comments.html" %}
+</div>
+       <!-- Вывод паджинатора -->
+        {% if page.has_other_pages %}
+            {% include "includes/paginator.html" with items=page paginator=paginator%}
+        {% endif %}
+
+{% endblock %}

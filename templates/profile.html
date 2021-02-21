@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Последние посты пользователя {{ author.username }} {% endblock %}
+
+{% block content %}
+
+{% include "includes/user.html" %}
+<div class="container">
+           <h1>Записи пользователя {{ author.username }}</h1>
+
+                    <!-- Вывод ленты записей пользователя -->
+               {% for post in page %}
+                    {% include "includes/post_item.html" with post=post %}
+               {% endfor %}
+<div/>
+
+    <!-- Вывод паджинатора -->
+        {% if page.has_other_pages %}
+            {% include "includes/paginator.html" with items=page paginator=paginator%}
+        {% endif %}
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}О технологиях{% endblock %}
+{% block content %}
+{% load user_filters %}
+  <main role="main" class="container">
+    <div class="row">
+      <!-- Левый вспомогательный блок -->
+      {% include 'includes/about_developer.html' %}
+      <!-- Тело страницы -->
+      <div class="col-md-9">
+        <div class="card-body">
+          <div class="card-text">
+            <p>В ходе создания проекта использовал: Django 2.2.6, SQLite3, bootstrap 5.0 </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
